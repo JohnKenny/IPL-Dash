@@ -14,6 +14,8 @@ public class Team {
     private long totalMatches;
     private long totalWins;
     private String teamName;
+
+    public Team() {}
     
     public Team(String teamName, long totalMatches ) {
         this.totalMatches = totalMatches;
