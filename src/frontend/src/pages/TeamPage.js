@@ -4,7 +4,8 @@ import { MatchSmallCard } from '../components/MatchSmallCard';
 
 export const TeamPage = () => {
 
-    const [ team, setTeam ] = useState({});
+    // team state intitialises with an empty array '[]'
+    const [ team, setTeam ] = useState({matches: []});
     
 
     useEffect(
@@ -17,17 +18,15 @@ export const TeamPage = () => {
             };
             fetchMatches();
            
-        }
-        //[] // empty [] -> useEffect runs when component loads
+        },
+        [] // empty [] -> call useEffect only on first component load
     );
 
   return (
     <div className="TeamPage">
         <h1>{ team.teamName }</h1> 
-        <MatchDetailCard />
-        <MatchSmallCard />
-        <MatchSmallCard /> 
-        <MatchSmallCard />
+        <MatchDetailCard match={team.matches[0]}/>
+        {team.matches.slice(1).map(match => <MatchSmallCard match={match}/>)}
            
     </div>
   );
