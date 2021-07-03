@@ -7,9 +7,16 @@ export const MatchDetailCard = ({teamName, match}) => {
   if(!match) return null;
   const otherTeam = match.team1 === teamName ?  match.team2 : match.team1;
   const otherTeamRoute = `/teams/${otherTeam}`;
+  const isMatchWon = teamName === match.matchWinner;
   return (
     <div className="MatchDetailCard">
+        <div>
         <span className="vs">vs</span>
+        <h2><Link to={otherTeamRoute}>{otherTeam}</Link></h2>
+        <h3 className="match-date">{match.date}</h3>
+        <h4 className="match-venue">{match.venue}</h4>
+        <h4 className="match-result">{match.matchWinner} won by {match.resultMargin} {match.result}</h4>
+        </div>
         <div className="additional-detail">
         <h4>First Innings</h4>
         <p>{match.team1}</p>
@@ -19,12 +26,6 @@ export const MatchDetailCard = ({teamName, match}) => {
         <p>{match.playerOfMatch}</p>
         <h4>Umpires</h4>
         <p>{match.umpire1}, {match.umpire2}</p>
-        </div>
-        <div>
-        <h2><Link to={otherTeamRoute}>{otherTeam}</Link></h2>
-        <h3 className="match-date">{match.date}</h3>
-        <h4 className="match-venue">{match.venue}</h4>
-        <h4 className="match-result">{match.matchWinner} won by {match.resultMargin} {match.result}</h4>
         </div>
         
     </div>
