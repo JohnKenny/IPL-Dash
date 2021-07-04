@@ -1,8 +1,11 @@
 .MatchDetailCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 1px;
+    margin-top: 2px;
+    border-radius: 12px;
+
 
     .match-date, .match-venue, .match-result {
         margin-top: 10px;
@@ -15,3 +18,4 @@
         }
     }
 }
+

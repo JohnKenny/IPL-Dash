@@ -13,18 +13,23 @@
     }
 
     .team-name {
-        font-size: 3rem;
+        font-size: 4rem;
         margin-bottom:20px;
     }
 
     .win-loss-section {
         justify-self: center;
-        align-self: center;
+        align-self:center;
         
     }
 
     .match-detail-section {
         grid-column: span 4;
+    }
+
+    .more-link {
+        align-self: center;
+        justify-self: center;
     }
 
 }

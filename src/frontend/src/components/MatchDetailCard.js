@@ -9,7 +9,7 @@ export const MatchDetailCard = ({teamName, match}) => {
   const otherTeamRoute = `/teams/${otherTeam}`;
   const isMatchWon = teamName === match.matchWinner;
   return (
-    <div className="MatchDetailCard">
+    <div className={isMatchWon ? 'MatchDetailCard won-card' : 'MatchDetailCard lost-card'}>
         <div>
         <span className="vs">vs</span>
         <h2><Link to={otherTeamRoute}>{otherTeam}</Link></h2>

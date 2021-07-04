@@ -39,8 +39,8 @@ export const TeamPage = () => {
             <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
         </div>
         {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName}  match={match}/>)}
-        <div>
-            <a href="#">More</a>
+        <div className="more-link">
+            <a href="#">More ></a>
         </div>
     </div>
   );
