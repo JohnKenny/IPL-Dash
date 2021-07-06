@@ -1,0 +1,17 @@
+.MatchPage {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 90px;
+    .year-selector{
+        justify-self: end;
+        padding: 20px;
+    }
+}
+
+.match-heading {
+    margin-bottom: 14px;
+}
+
+.match-card {
+    
+}
