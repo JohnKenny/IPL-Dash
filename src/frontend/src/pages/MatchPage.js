@@ -2,6 +2,9 @@ import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MatchDetailCard } from '../components/MatchDetailCard';
 import { MatchSmallCard } from '../components/MatchSmallCard';
+import { YearSelector } from '../components/YearSelector';
+
+import './MatchPage.scss';
 
 export const MatchPage = () => {
 
@@ -20,15 +23,23 @@ export const MatchPage = () => {
        
     },
     // added dependency  
-    [] // empty [] -> call useEffect only on first component load
+    [teamName, year] // empty [] -> call useEffect only on first component load
 );
 
   return (
     <div className="MatchPage">
-        <h1>Match Page</h1>
-           {
+          <div className="year-selector">
+            <h3>Select year</h3>
+            <YearSelector teamName={teamName} />
+          </div>
+          <div>
+          <h1 className="match-heading">{teamName} in {year}</h1>
+            
+            {
              matches.map(match => <MatchDetailCard teamName={teamName}  match={match}/>)
-           }
+            }
+            
+           </div>
     </div>
   );
 }
